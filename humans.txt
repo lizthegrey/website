@@ -1,0 +1,13 @@
+/* TEAM */
+Name: Liz Fong-Jones
+Site: https://lizthegrey.com
+Location: Sydney, Australia
+
+/* THANKS */
+Migration assistance: Claude (Anthropic)
+
+/* SITE */
+Last update: 2026/01/31
+Standards: HTML5, CSS3
+Components: Caddy web server
+Software: Hand-coded HTML/CSS

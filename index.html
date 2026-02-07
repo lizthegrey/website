@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liz Fong-Jones - @lizthegrey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- SVG Icon Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="icon-bluesky" viewBox="0 0 24 24">
+            <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/>
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 24 24">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </symbol>
+        <symbol id="icon-linkedin" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </symbol>
+        <symbol id="icon-twitch" viewBox="0 0 24 24">
+            <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/>
+        </symbol>
+        <symbol id="icon-youtube" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </symbol>
+        <symbol id="icon-medium" viewBox="0 0 24 24">
+            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+        </symbol>
+    </svg>
+
+    <header>
+        <h1>Liz Fong-Jones</h1>
+        <p class="handle">@lizthegrey</p>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="about-content">
+                <img src="images/headshot.jpg" alt="Liz Fong-Jones headshot" class="profile-photo">
+                <div class="about-text">
+                    <h2>About</h2>
+                    <p class="headline">
+                        I make developers, operators, and workers as a whole more productive and empowered.
+                    </p>
+                    <p>
+                        Liz is a developer advocate, labor and ethics organizer, and Site Reliability Engineer (SRE)
+                        with over two decades of experience. She is currently a Technical Fellow at
+                        <a href="https://honeycomb.io" target="_blank" rel="noopener">honeycomb.io</a>, and previously
+                        was an SRE working on products ranging from the Google Cloud Load Balancer to Google Flights.
+                    </p>
+                    <p>
+                        She lives in Vancouver, BC with her wife Elly and partners, and in Sydney, NSW. She plays
+                        classical piano, leads an EVE Online alliance, and advocates for transgender rights.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="social">
+            <h2>Connect</h2>
+            <nav class="social-links">
+                <a href="https://bsky.app/profile/lizthegrey.com" target="_blank" rel="noopener" aria-label="Bluesky">
+                    <svg class="social-icon" aria-hidden="true"><use href="#icon-bluesky"></use></svg>
+                    <span>Bluesky</span>
+                </a>
+                <a href="https://github.com/lizthegrey" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg class="social-icon" aria-hidden="true"><use href="#icon-github"></use></svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/efong/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg class="social-icon" aria-hidden="true"><use href="#icon-linkedin"></use></svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.twitch.tv/lizthegrey" target="_blank" rel="noopener" aria-label="Twitch">
+                    <svg class="social-icon" aria-hidden="true"><use href="#icon-twitch"></use></svg>
+                    <span>Twitch</span>
+                </a>
+                <a href="https://www.youtube.com/@lizthegrey" target="_blank" rel="noopener" aria-label="YouTube">
+                    <svg class="social-icon" aria-hidden="true"><use href="#icon-youtube"></use></svg>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://medium.com/@lizthegrey" target="_blank" rel="noopener" aria-label="Medium">
+                    <svg class="social-icon" aria-hidden="true"><use href="#icon-medium"></use></svg>
+                    <span>Medium</span>
+                </a>
+            </nav>
+        </section>
+
+        <section id="speaking">
+            <h2>Speaking Topics</h2>
+            <ul class="topics-grid">
+                <li>
+                    <h3>Cultivating Production Excellence</h3>
+                    <p>Changing the way we approach tools, collaboration, and success metrics for managing distributed systems. Covers production stakes, observability for collaboration, Service Level Objectives, and risk-based prioritization.</p>
+                    <p class="venues">QCon London 2019, Velocity San Jose (keynote), DevOpsDays Atlanta</p>
+                </li>
+                <li>
+                    <h3>Tradeoffs on the Road to Observability</h3>
+                    <p>Examining how SREs spend their time and how we can empower non-SRE engineers instead of seeking individual recognition.</p>
+                    <p class="venues">Monitorama PDX 2019</p>
+                </li>
+                <li>
+                    <h3>Refining Systems Data Without Losing Fidelity</h3>
+                    <p>Statistics can come to our rescue, enabling us to gather accurate, specific, and error-bounded data through reducing junk data, reusing data points as samples, and recycling data into counters.</p>
+                    <p class="venues">SREcon Europe 2019</p>
+                </li>
+                <li>
+                    <h3>Organizing for Your Ethical Principles</h3>
+                    <p>How engineers can ensure their work serves the public good through grassroots employee advocacy.</p>
+                    <p class="venues">SREcon EMEA 2018 (joint keynote with Emily Gorcenski), Write/Speak/Code 2018, QCon NYC 2018</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="recent-talks">
+            <h2>Recent Talks</h2>
+            <ul class="talk-list">
+                <li>
+                    <strong>SREcon 2025</strong> - Fast, reproducible builds with Docker Bake
+                </li>
+                <li>
+                    <strong>YOW! Conference 2025</strong> - Speaking at <a href="https://yowcon.com/sydney-2025/speakers/3874/liz-fong-jones" target="_blank" rel="noopener">Sydney</a>, <a href="https://yowcon.com/brisbane-2025/speakers/3863/liz-fong-jones" target="_blank" rel="noopener">Brisbane</a>, and <a href="https://yowcon.com/melbourne-2025/speakers/3844/liz-fong-jones" target="_blank" rel="noopener">Melbourne</a>
+                </li>
+                <li>
+                    <strong>PlatformCon 2025</strong>
+                </li>
+                <li>
+                    <strong>AWS re:Invent 2024</strong> - DEV302: Optimizing performance and cost with AWS Graviton (<a href="https://www.youtube.com/watch?v=vSdScyCFsFI" target="_blank" rel="noopener">video</a>)
+                </li>
+                <li>
+                    <strong>GOTO Chicago 2024</strong> - <a href="https://gotochgo.com/2024/sessions/3358/using-serverless-and-arm64-for-real-time-observability" target="_blank" rel="noopener">Using Serverless and ARM64 for Real-Time Observability</a>
+                </li>
+                <li>
+                    <strong>SREcon Americas 2024</strong> - <a href="https://www.usenix.org/conference/srecon24americas/presentation/fong-jones" target="_blank" rel="noopener">Workshop: Cloud-Native Observability with OpenTelemetry</a>
+                </li>
+                <li>
+                    <strong>AWS re:Invent 2023</strong> - Seamless observability with AWS Distro for OpenTelemetry
+                </li>
+                <li>
+                    <strong>AWS Summit New York 2022</strong> - Featured customer speaker in Dr. Werner Vogels' keynote, discussing Honeycomb's AWS Graviton migration story
+                </li>
+            </ul>
+
+            <h3 class="subsection-heading">Archived Talks</h3>
+            <button class="accordion-toggle subsection-toggle" aria-expanded="false" aria-controls="talks-content">
+                <span>View Archive</span>
+                <span class="toggle-icon" aria-hidden="true">▼</span>
+            </button>
+            <div id="talks-content" class="accordion-content" hidden>
+                <article class="talk">
+                    <h3>Intro to SRE</h3>
+                    <p>
+                        Reliability is a critical feature of most software, and maintenance rather than
+                        initial development predominates the cost of most software systems.
+                    </p>
+                    <p class="co-dev"><strong>Co-developer:</strong> Alesia Braga</p>
+                    <h4>Venues & Videos:</h4>
+                    <ul>
+                        <li>The Lead Developer NYC 2018 - <a href="https://www.youtube.com/watch?v=9kphSZi69tg&index=6&list=PLdh-RwQzDsaN-evaS8HbRZW6THM-L4Ine" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/file/d/1uMrjy_MSxaDdyWDU8ivT0OyWFlcHVfkO/view" target="_blank" rel="noopener">slides</a></li>
+                        <li>Code As Craft at Etsy - <a href="https://www.youtube.com/watch?v=7VeU6LnOUms" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/open?id=1IRTbehoPEhq4PtyxGYVP_rrOddYpLOs_" target="_blank" rel="noopener">slides</a></li>
+                        <li>PDX Women Talking Tech meetup</li>
+                        <li>Toronto & Chicago Google Cloud Summits</li>
+                        <li>Velocity NYC 2018 (enterprise version with Dave Rensin) - <a href="https://drive.google.com/open?id=1FXwHm6mpmRA9NaIJEu4cB1s6ffbyGBfl" target="_blank" rel="noopener">slides</a></li>
+                    </ul>
+                </article>
+
+                <article class="talk">
+                    <h3>Debugging Microservices</h3>
+                    <p>
+                        When using tens or hundreds of microservices to provide an application's critical functionality,
+                        diagnosing interactions becomes complex.
+                    </p>
+                    <p class="co-dev"><strong>Co-developers:</strong> George Talbot, Adam Mckaig</p>
+                    <h4>Venues & Videos:</h4>
+                    <ul>
+                        <li>Systems at Scale 2018 - <a href="https://atscaleconference.com/videos/systems-scale-2018-resolving-outages-faster-with-better-debugging-strategies/" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/file/d/1rM6fy_z9sZD45NYi5mvdxNQRa2ivpYt8/view" target="_blank" rel="noopener">slides</a></li>
+                        <li>All Day DevOps 2018 - <a href="http://play.sonatype.com/watch/BXcPBkUazJArcBohkfghCN" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/open?id=1rR7976kcA7Q_5M4HaUzEJvBElcFAgX1w" target="_blank" rel="noopener">slides</a></li>
+                        <li>QCon NYC 2018, DevOpsDays NYC 2018, Gluecon 2018, SREcon Americas 2018</li>
+                    </ul>
+                </article>
+
+                <article class="talk">
+                    <h3>Reliable Inclusion</h3>
+                    <p>
+                        Making your team safe and inclusive doesn't end with unconscious bias training.
+                    </p>
+                    <h4>Venues:</h4>
+                    <ul>
+                        <li>Flawless Hacks 2018 - <a href="https://drive.google.com/open?id=13Kfq1qftiesouhS0UGB4JntyQ5QpGnYY" target="_blank" rel="noopener">slides</a></li>
+                        <li>Velocity NY 2016</li>
+                        <li>Internal Google training</li>
+                    </ul>
+                </article>
+
+                <article class="talk">
+                    <h3>Effective Service Level Objectives</h3>
+                    <p>
+                        Service level objectives and error budgets are the cornerstone of Site Reliability Engineering.
+                    </p>
+                    <p class="co-dev"><strong>Co-developers:</strong> CRE team (Kristina Bennett, Alex Bramley, David Ferguson, Marie Cosgrove-Davies)</p>
+                    <h4>Venues & Videos:</h4>
+                    <ul>
+                        <li>Datadog Dash 2018 - <a href="https://www.youtube.com/watch?v=39ycBjCagTU&list=PLdh-RwQzDsaN-evaS8HbRZW6THM-L4Ine&index=6" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/file/d/1iXF0AuwFZu3bO2W6e6O7sSKHD2PH55uk/view" target="_blank" rel="noopener">slides</a></li>
+                        <li>Google Cloud Next SF 2018 - <a href="https://www.youtube.com/watch?v=TzFjweKACMY" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/file/d/1iOMaYIwlUBiGoG2mf8MFzl3EHy5xGJpq/view" target="_blank" rel="noopener">slides</a></li>
+                        <li>Code As Craft at Etsy</li>
+                    </ul>
+                </article>
+
+                <article class="talk">
+                    <h3>Relieving Tech Debt w/ Interrupt Reduction Projects</h3>
+                    <p>
+                        Planning approach addressing month-long projects, oncall rotations, and week-long technical debt initiatives.
+                    </p>
+                    <p class="co-dev"><strong>Co-developers:</strong> John Tobin, Dave O'Connor</p>
+                    <h4>Venues:</h4>
+                    <ul>
+                        <li>BoSRE Boston - <a href="https://drive.google.com/file/d/1H93EiP7hPZ-yWCegou23iFjHlfB2Ke9_/view" target="_blank" rel="noopener">slides</a></li>
+                        <li>SREcon Europe 2016 - <a href="https://www.usenix.org/conference/srecon16europe/program/presentation/fong-jones-projects" target="_blank" rel="noopener">video</a></li>
+                        <li>Internal Google summits</li>
+                    </ul>
+                </article>
+
+                <article class="talk">
+                    <h3>Managing Up and Sideways</h3>
+                    <p>
+                        Guidance on handling management challenges and influencing projects as individual contributor or tech lead.
+                    </p>
+                    <h4>Venues & Videos:</h4>
+                    <ul>
+                        <li>Lesbians Who Tech NYC 2018 keynote - <a href="https://www.youtube.com/watch?v=YIyRicOWQnM" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/file/d/13apCx-C915Ji2cXiPt6ijmTvEApKvxeX/view" target="_blank" rel="noopener">slides</a>, <a href="https://twitter.com/lizthegrey/status/1040736181296738304" target="_blank" rel="noopener">a11y notes</a></li>
+                        <li>SREcon 2016 Europe</li>
+                    </ul>
+                </article>
+
+                <article class="talk">
+                    <h3>Build skills through hobbies! Bring them to work!</h3>
+                    <p>
+                        Building technical and leadership skills doesn't only happen in the workplace!
+                    </p>
+                    <h4>Venues & Videos:</h4>
+                    <ul>
+                        <li>!!con NYC 2018 keynote - <a href="https://www.youtube.com/watch?v=L3CsxLU0jC0" target="_blank" rel="noopener">video</a>, <a href="https://drive.google.com/file/d/1LP25JiuqvNNxrlj_xEpQC2M5SOq6A0SK/view" target="_blank" rel="noopener">slides</a></li>
+                    </ul>
+                </article>
+            </div>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <article>
+                <h3>Technical Fellow, honeycomb.io</h3>
+                <p class="date">January 2026 - Present</p>
+                <p>Technical advocacy and observability innovation.</p>
+            </article>
+            <article>
+                <h3>Field CTO, honeycomb.io</h3>
+                <p class="date">October 2022 - December 2025</p>
+                <p>Customer-facing technical leadership and strategic guidance.</p>
+            </article>
+            <article>
+                <h3>Principal Developer Advocate, honeycomb.io</h3>
+                <p class="date">February 2019 - October 2022</p>
+                <p>Developer advocacy, community building, and observability education.</p>
+            </article>
+            <article>
+                <h3>Google</h3>
+                <p class="date">2008 - 2019</p>
+                <p>Site Reliability Engineer and staff engineer positions focusing on SRE, distributed systems, and infrastructure. Products included Google Cloud Load Balancer, Google Flights, Bigtable, and GFE.</p>
+            </article>
+        </section>
+
+        <section id="education">
+            <h2>Education & Credentials</h2>
+            <p>Massachusetts Institute of Technology (MIT), 2014</p>
+            <p>Senior Member of the Australian Computer Society [MACS (Snr) CP]</p>
+        </section>
+
+        <section id="publications">
+            <h2>Publications & Videos</h2>
+            <article class="publication">
+                <img src="images/observability-book-cover.png" alt="Observability Engineering book cover featuring a maned wolf" class="book-cover">
+                <div class="publication-details">
+                    <h3>Observability Engineering</h3>
+                    <p>O'Reilly, May 2022. Co-authored with Charity Majors and George Miranda.</p>
+                </div>
+            </article>
+
+            <div class="publications-list">
+                <h3>Video Series</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=uTEL8Ff1Zvk" target="_blank" rel="noopener">What's the Difference Between DevOps and SRE?</a> - Most well-known video with Seth Vargo explaining "class SRE implements DevOps"</li>
+                </ul>
+
+                <h3>Recent Blog Posts (2024-2025)</h3>
+                <ul>
+                    <li><a href="https://www.honeycomb.io/blog/most-important-developer-productivity-metric" target="_blank" rel="noopener">"The Most Important Developer Productivity Metric"</a> (Honeycomb, January 2025)</li>
+                    <li><a href="https://www.honeycomb.io/blog/debugging-kubernetes-autoscaling-honeycomb-log-analytics" target="_blank" rel="noopener">"Debugging Kubernetes Autoscaling with Honeycomb Log Analytics"</a> (Honeycomb, October 2024)</li>
+                    <li><a href="https://www.honeycomb.io/blog/why-every-engineering-team-should-embrace-aws-graviton4" target="_blank" rel="noopener">"Why Every Engineering Team Should Embrace AWS Graviton4"</a> (Honeycomb, July 2024)</li>
+                    <li><a href="https://www.honeycomb.io/blog/framework-observability-maturity-model" target="_blank" rel="noopener">"Framework for an Observability Maturity Model"</a> (Honeycomb, June 2024)</li>
+                </ul>
+
+                <h3>Selected Articles & Papers</h3>
+                <ul>
+                    <li><a href="https://cloud.google.com/blog/products/devops-sre/sre-vs-devops-competing-standards-or-close-friends" target="_blank" rel="noopener">"SRE vs. DevOps: competing standards or close friends?"</a> (GCP Blog) with Seth Vargo</li>
+                    <li>"How SRE relates to DevOps" in <em>Site Reliability Workbook</em> with Betsy Beyer and Niall Murphy</li>
+                    <li>"Sustainable Operations in Complex Systems With Production Excellence" (<em>InfoQ</em>)</li>
+                    <li>"Intersections between Operations and Social Activism" in <em>Seeking SRE</em> with Emily Gorcenski</li>
+                    <li><a href="https://www.ft.com/content/48e8e72a-8ecd-11e8-bb8f-a6a2f7bca546" target="_blank" rel="noopener">"Jeff Bezos is wrong, tech workers are not bullies"</a> (<em>Financial Times</em>) with Laura Nolan et al.</li>
+                    <li><a href="https://medium.com/@lizthegrey/our-executives-engaged-in-abuse-dont-let-kink-and-polyamory-be-their-scapegoats-9c6c6c8b364d" target="_blank" rel="noopener">"Our Executives Engaged in Abuse. Don't Let Kink and Polyamory Be Their Scapegoats"</a> (<em>Medium</em>)</li>
+                    <li>"Interrupt Reduction Projects" (USENIX <em>;login:</em>) with John Tobin and Betsy Beyer</li>
+                    <li>"A Hierarchy of SRE Needs" (blog)</li>
+                    <li>"The Myth of Psychological Safety" (blog)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="interviews">
+            <h2>Interviews & Podcasts</h2>
+            <ul class="publications-list">
+                <li>GCP Podcast Episode 127 - SRE vs. DevOps with Seth Vargo, Melanie Warrick, Mark Mandel</li>
+                <li>GCP Podcast Episode 139 with Melanie Warrick and Mark Mandel</li>
+                <li>Screaming in the Cloud Episode 19 with Corey Quinn</li>
+                <li>Fireside Chat at FutureStack NYC with Matthew Flaming</li>
+                <li>DevOps/SRE AMA with Charity Majors and Adam Jacob, hosted by Andrew Smirnov</li>
+                <li>o11ycast Episode 6 with Charity Majors and Rachel Chalmers</li>
+                <li>Frequent panel participation on management, SRE, and ethics</li>
+            </ul>
+        </section>
+
+        <section id="technical-press">
+            <h2>Technical Press & Citations</h2>
+            <ul class="publications-list">
+                <li><a href="https://www.techtarget.com/searchitoperations/news/252450255/SRE-model-requires-technical-organizational-optimization-skills" target="_blank" rel="noopener">"SRE model requires technical, organizational optimization skills"</a> (<em>TechTarget</em>, Oct 2018) - On grumpy humans and system scale</li>
+                <li>"Google Cloud Next '18" (<em>Computer Weekly</em>, July 2018) - Features SRE/DevOps video playlist with Seth Vargo</li>
+                <li>"How Facebook operations got 10 times faster" (<em>CNET</em>, July 2018) - On sophisticated tracing tools</li>
+                <li><a href="https://thenewstack.io/debugging-microservices-lessons-from-google-facebook-lyft/" target="_blank" rel="noopener">"Debugging Microservices: Lessons from Google, Facebook, Lyft"</a> (<em>The New Stack</em>, July 2018) - On dashboard cognitive overload</li>
+                <li>"Defining the role of a Site Reliability Engineer" (<em>ITOpsTimes</em>, March 2018) - On SRE as a specialized job function</li>
+                <li><a href="https://thenewstack.io/no-grumpy-humans-other-sre-lessons-google/" target="_blank" rel="noopener">"No Grumpy Humans and Other SRE Lessons from Google"</a> (<em>The New Stack</em>, Oct 2017) - On communication, humility and trust in SRE</li>
+            </ul>
+        </section>
+
+        <section id="community">
+            <h2>Community Involvement</h2>
+            <div class="community-content">
+                <h3>USENIX SREcon</h3>
+                <ul>
+                    <li>Global Steering Committee Member (2017-present)</li>
+                    <li>Program Co-Chair: SREcon Asia/Australia 2022, SREcon Americas 2016, 2017, 2019</li>
+                    <li>Program Committee Member: SREcon Europe 2016, 2017; SREcon {Americas, EMEA, Asia/Australia} 2018</li>
+                </ul>
+
+                <h3>Other</h3>
+                <ul>
+                    <li>OpenTelemetry Governance Committee Emeritus</li>
+                    <li>AWS Community Hero (2022-present)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="grants">
+            <h2>Grants & Investments</h2>
+            <div class="grants-content">
+                <div class="grants-column">
+                    <h3>Non-Profit Grantees</h3>
+                    <ul>
+                        <li>National Center for Transgender Equality (also board member 2018-2020)</li>
+                        <li>Coworker Solidarity Fund (founder, board chair)</li>
+                        <li>Lambda Legal</li>
+                        <li>Trans Lifeline</li>
+                        <li>Transgender Law Center</li>
+                        <li>Brooklyn Bail Fund</li>
+                        <li>Black and Brown Founders</li>
+                        <li>Native Women Lead</li>
+                        <li>Zebras Unite</li>
+                        <li>Paladin</li>
+                        <li>Effing Foundation for Sex-Positivity</li>
+                        <li>Alliance for Safe Traffic Stops</li>
+                        <li>And others</li>
+                    </ul>
+                </div>
+
+                <div class="grants-column">
+                    <h3>For-Profit Seed Investments</h3>
+                    <ul>
+                        <li>Backstage Studio</li>
+                        <li>Tall Poppy (board member)</li>
+                        <li>Career Karma</li>
+                        <li>MyWellbeing</li>
+                        <li>Posture Media</li>
+                        <li><del>Ethel's Club</del></li>
+                        <li><del>Appolition</del></li>
+                        <li><del>Astral AR</del></li>
+                        <li>And others</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="press">
+            <h2>Press & Articles</h2>
+            <div class="press-grid">
+                <article class="press-item">
+                    <a href="https://www.wired.com/story/inside-google-three-years-misery-happiest-company-tech/" target="_blank" rel="noopener">
+                        <img src="images/wired-google.jpg" alt="Wired magazine cover - Three Years of Misery Inside Google">
+                        <h3>Three Years of Misery Inside Google</h3>
+                        <p class="publication-name">Wired</p>
+                    </a>
+                </article>
+                <article class="press-item">
+                    <a href="https://fortune.com/longform/inside-googles-civil-war/" target="_blank" rel="noopener">
+                        <img src="images/fortune-google.jpg" alt="Fortune article - Inside Google's Civil War">
+                        <h3>Inside Google's Civil War</h3>
+                        <p class="publication-name">Fortune</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Liz Fong-Jones</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

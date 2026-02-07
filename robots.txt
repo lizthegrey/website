@@ -1,0 +1,6 @@
+# robots.txt for lizthegrey.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://lizthegrey.com/sitemap.xml

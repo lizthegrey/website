@@ -1,0 +1,607 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #f6f7f8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --accent-color: #2a5880;
+    --border-color: #e1e1e1;
+    --spacing-unit: 1rem;
+    --max-width: 1100px;
+    --page-padding: 7vw;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    background-color: var(--primary-bg);
+    font-size: 16.5px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-bg);
+    padding: calc(var(--spacing-unit) * 5) var(--page-padding) calc(var(--spacing-unit) * 4);
+    text-align: center;
+    border-bottom: none;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.handle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+}
+
+/* Main content */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: calc(var(--spacing-unit) * 4) var(--page-padding) calc(var(--spacing-unit) * 5);
+}
+
+section {
+    margin-bottom: calc(var(--spacing-unit) * 6);
+}
+
+section:first-child {
+    margin-bottom: calc(var(--spacing-unit) * 7);
+}
+
+section h2 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
+    padding-bottom: 0;
+    border-bottom: none;
+    color: var(--text-secondary);
+}
+
+section h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    margin-bottom: calc(var(--spacing-unit) * 0.85);
+    color: var(--text-primary);
+}
+
+section p {
+    margin-bottom: calc(var(--spacing-unit) * 1.35);
+    max-width: 70ch;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* About section with profile photo */
+.about-content {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: calc(var(--spacing-unit) * 4.5);
+    align-items: start;
+}
+
+.profile-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0.5rem;
+}
+
+.about-text h2 {
+    margin-top: 0;
+}
+
+.about-text .headline {
+    font-size: 1.45rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text-primary);
+    letter-spacing: 0.005em;
+    margin-bottom: calc(var(--spacing-unit) * 1.75);
+}
+
+/* Publications section */
+.publication {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: calc(var(--spacing-unit) * 4);
+    align-items: start;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.book-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.publication-details h3 {
+    margin-top: 0;
+    font-weight: 500;
+}
+
+/* Press section */
+.press-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: calc(var(--spacing-unit) * 4);
+}
+
+.press-item {
+    background-color: transparent;
+    border-radius: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.press-item:hover {
+    opacity: 0.75;
+    transform: none;
+    box-shadow: none;
+}
+
+.press-item a {
+    display: block;
+    color: var(--text-primary);
+}
+
+.press-item a:hover {
+    text-decoration: none;
+}
+
+.press-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+}
+
+.press-item h3 {
+    padding: calc(var(--spacing-unit) * 1.5) 0 calc(var(--spacing-unit) * 0.65);
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+}
+
+.press-item .publication-name {
+    padding: 0;
+    margin: 0;
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 0.875rem;
+}
+
+/* Social links - organic layout */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 3);
+    margin-top: calc(var(--spacing-unit) * 1.5);
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--spacing-unit) * 0.65);
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    opacity: 0.75;
+}
+
+/* Speaking topics - organic list */
+.topics-grid {
+    list-style: none;
+    display: block;
+}
+
+.topics-grid li {
+    padding: 0;
+    background-color: transparent;
+    margin-bottom: calc(var(--spacing-unit) * 3.5);
+    max-width: 650px;
+}
+
+.topics-grid li:nth-child(even) {
+    margin-left: auto;
+}
+
+.topics-grid h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.005em;
+}
+
+.topics-grid p {
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+}
+
+.topics-grid p:last-child {
+    margin-bottom: 0;
+}
+
+.topics-grid .venues {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.65;
+}
+
+/* Recent talks and general lists */
+.talk-list,
+.publications-list {
+    line-height: 1.85;
+}
+
+.talk-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.talk-list li {
+    margin-bottom: calc(var(--spacing-unit) * 1.15);
+    padding-left: 1.5em;
+    text-indent: -1.5em;
+}
+
+.talk-list li::before {
+    content: "→";
+    margin-right: 0.75em;
+    color: var(--text-secondary);
+}
+
+.publications-list li {
+    margin-bottom: calc(var(--spacing-unit) * 0.85);
+}
+
+.publications-list h3 {
+    margin-top: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 1.25);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.publications-list ul {
+    margin-left: calc(var(--spacing-unit) * 1.25);
+}
+
+/* Community section */
+.community-content h3 {
+    margin-top: calc(var(--spacing-unit) * 2.5);
+    margin-bottom: calc(var(--spacing-unit) * 1.25);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.community-content h3:first-child {
+    margin-top: 0;
+}
+
+.community-content ul {
+    margin-left: calc(var(--spacing-unit) * 1.25);
+    line-height: 1.85;
+}
+
+.community-content li {
+    margin-bottom: calc(var(--spacing-unit) * 0.65);
+}
+
+.grants-content {
+    display: block;
+}
+
+.grants-column {
+    margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.grants-column h3 {
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 1.25);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.grants-column ul {
+    margin-left: 0;
+    list-style: none;
+    line-height: 1.9;
+    column-count: 2;
+    column-gap: calc(var(--spacing-unit) * 4);
+}
+
+.grants-column li {
+    margin-bottom: calc(var(--spacing-unit) * 0.65);
+    break-inside: avoid;
+}
+
+.grants-column li::before {
+    content: "·";
+    margin-right: 0.75em;
+    color: var(--text-secondary);
+}
+
+.grants-column del {
+    opacity: 0.45;
+    text-decoration: line-through;
+}
+
+/* Experience section */
+#experience article {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.date {
+    color: var(--text-secondary);
+    font-style: normal;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* Subsection heading within Recent Talks */
+.subsection-heading {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    text-transform: none;
+    margin-top: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 1);
+    color: var(--text-primary);
+}
+
+/* Accordion for talks */
+.accordion-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subsection-toggle {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--accent-color);
+    width: auto;
+    display: inline-flex;
+    gap: 0.5em;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.subsection-toggle:hover {
+    opacity: 0.7;
+}
+
+.accordion-toggle:hover {
+    opacity: 0.6;
+}
+
+.toggle-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+}
+
+.subsection-toggle .toggle-icon {
+    font-size: 0.8rem;
+}
+
+.accordion-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    margin-top: calc(var(--spacing-unit) * 2.5);
+}
+
+.subsection-toggle + .accordion-content {
+    margin-top: 0;
+}
+
+.accordion-content[hidden] {
+    display: none;
+}
+
+/* Individual talk styling */
+.talk {
+    padding: 0 0 calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: none;
+}
+
+.talk:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.talk h3 {
+    color: var(--text-primary);
+    margin-bottom: calc(var(--spacing-unit) * 0.85);
+    font-weight: 500;
+    font-size: 1.15rem;
+}
+
+.talk h4 {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: calc(var(--spacing-unit) * 1.5);
+    margin-bottom: calc(var(--spacing-unit) * 0.85);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.talk ul {
+    margin-left: calc(var(--spacing-unit) * 1.25);
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+}
+
+.talk li {
+    margin-bottom: calc(var(--spacing-unit) * 0.7);
+    line-height: 1.75;
+}
+
+.co-dev {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: calc(var(--spacing-unit) * 0.85);
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-bg);
+    padding: calc(var(--spacing-unit) * 4) var(--page-padding) calc(var(--spacing-unit) * 3);
+    text-align: center;
+    border-top: none;
+    margin-top: calc(var(--spacing-unit) * 7);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    :root {
+        --page-padding: 8vw;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        padding: calc(var(--spacing-unit) * 4) var(--page-padding) calc(var(--spacing-unit) * 3);
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    .social-links {
+        gap: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+    }
+
+    .topics-grid li {
+        max-width: 100%;
+        margin-left: 0 !important;
+    }
+
+    .accordion-toggle {
+        font-size: 1.4rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 2.5);
+    }
+
+    .profile-photo {
+        max-width: 160px;
+        margin: 0 auto;
+    }
+
+    .publication {
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 2);
+    }
+
+    .book-cover {
+        max-width: 140px;
+        margin: 0 auto;
+    }
+
+    .press-grid {
+        grid-template-columns: 1fr;
+        gap: calc(var(--spacing-unit) * 2.5);
+    }
+
+    .grants-column ul {
+        column-count: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .handle {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: calc(var(--spacing-unit) * 1.25);
+    }
+}
